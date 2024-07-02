@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "629630311867",
+    "project_id": "church-7c5aa",
+    "storage_bucket": "church-7c5aa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:629630311867:android:62d55c9700ded29fcb789e",
+        "android_client_info": {
+          "package_name": "com.example.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyClZuLxABtSXGDwakUBsA4_VPYv7Ujomws"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
