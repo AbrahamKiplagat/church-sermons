@@ -83,6 +83,52 @@ flutter:
         - asset: /fonts/Poppins-MediumItalic.ttf
         - asset: /fonts/Poppins-Italic.ttf
         - asset: /fonts/Poppins-Regular.ttf
+    - family: Roboto
+      fonts:
+        - asset: /fonts/Roboto-Regular.ttf
+        - asset: /fonts/Roboto-Italic.ttf
+        - asset: /fonts/Roboto-Medium.ttf
+        - asset: /fonts/Roboto-MediumItalic.ttf
+        - asset: /fonts/Roboto-Bold.ttf
+        - asset: /fonts/Roboto-BoldItalic.ttf
+        - asset: /fonts/Roboto-Light.ttf
+        - asset: /fonts/Roboto-LightItalic.ttf
+        - asset: /fonts/Roboto-Thin.ttf
+        - asset: /fonts/Roboto-ThinItalic.ttf
+        - asset: /fonts/Roboto-Black.ttf
+        - asset: /fonts/Roboto-BlackItalic.ttf
+
+    - family: oxygen
+      fonts:
+        - asset: /fonts/Oxygen-Regular.ttf
+        - asset: /fonts/Oxygen-Bold.ttf
+        - asset: /fonts/Oxygen-Light.ttf
+
+    - family: Montserrat
+      fonts:
+        - asset: /fonts/Montserrat-Regular.ttf
+        - asset: /fonts/Montserrat-Italic.ttf
+        - asset: /fonts/Montserrat-Medium.ttf
+        - asset: /fonts/Montserrat-MediumItalic.ttf
+        - asset: /fonts/Montserrat-SemiBold.ttf
+        - asset: /fonts/Montserrat-SemiBoldItalic.ttf
+        - asset: /fonts/Montserrat-Bold.ttf
+        - asset: /fonts/Montserrat-BoldItalic.ttf 
+        - asset: /fonts/Montserrat-ExtraBold.ttf
+        - asset: /fonts/Montserrat-ExtraBoldItalic.ttf
+        - asset: /fonts/Montserrat-ExtraLight.ttf
+        - asset: /fonts/Montserrat-ExtraLightItalic.ttf
+        - asset: /fonts/Montserrat-Light.ttf
+        - asset: /fonts/Montserrat-LightItalic.ttf
+        - asset: /fonts/Montserrat-Thin.ttf
+        - asset: /fonts/Montserrat-ThinItalic.ttf
+        - asset: /fonts/Montserrat-Black.ttf
+        - asset: /fonts/Montserrat-BlackItalic.ttf
+
+       
+
+
+
 
 
 
