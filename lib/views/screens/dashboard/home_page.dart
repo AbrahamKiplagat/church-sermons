@@ -1,72 +1,170 @@
 import 'package:flutter/material.dart';
+import 'package:app/views/screens/sidebar/animated_sidebar.dart'; // Import AnimatedSidebar class
+// import 'package:app/views/widgets/drawer_navigation.dart'; // Import DrawerNavigation class
 
 class HomePage extends StatelessWidget {
   static const routeName = '/home';
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false, // Remove debug banner
-      home: Scaffold(
-        body: Container(
+    return Scaffold(
+      extendBodyBehindAppBar: true, // Extend the body behind the app bar
+      appBar: AppBar(
+        title: Row(
+          children: [
+            RichText(
+              text: TextSpan(
+                children: [
+                  TextSpan(
+                    text: 'City ',
+                    style: TextStyle(
+                      fontFamily: 'FjallaOne',
+                      fontWeight: FontWeight.normal, // Normal weight for "City"
+                      fontSize: 40, // Adjust the font size as needed
+                      color: Colors.white, // Ensure the color is set for visibility
+                    ),
+                  ),
+                  TextSpan(
+                    text: 'Church',
+                    style: TextStyle(
+                      fontFamily: 'FjallaOne',
+                      fontWeight: FontWeight.bold, // Bold weight for "Church"
+                      fontSize: 40, // Adjust the font size as needed
+                      color: Colors.white, // Ensure the color is set for visibility
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Spacer(), // Spacer to push the icon to the right
+            IconButton(
+              icon: Icon(
+                Icons.person,
+                color: Color.fromARGB(255, 255, 230, 0), // Set the icon color
+              ),
+              onPressed: () {
+                // Add your onPressed functionality here
+              },
+            ),
+          ],
+        ),
+        backgroundColor: Colors.transparent, // Make AppBar transparent
+        elevation: 0, // Remove AppBar shadow
+      ),
+      drawer: DrawerNavigation(), // Use Animated DrawerNavigation widget for the drawer
+      body: SingleChildScrollView(
+        child: Container(
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage('images/h.png'), // Path to your background image
+              image: AssetImage('assets/images/h.png'), // Path to your background image
               fit: BoxFit.cover,
             ),
           ),
-          child: Column(
-            children: [
-              AppBar(
-                title: Row(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(height: 100), // Add padding above 'Thought of the Day'
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 20), // Add spacing below 'Thought of the Day'
+                  child: SelectableText( // Make 'Thought of the Day' selectable
+                    'Thought of the Day',
+                    style: TextStyle(
+                      fontFamily: 'Poppins',
+                      fontWeight: FontWeight.bold,
+                      fontSize: 24,
+                      color: Color.fromARGB(255, 255, 230, 0),
+                    ),
+                  ),
+                ),
+                SelectableText( // Make the thought content selectable
+                  "At the end of the day, before close your eyes, be content with what you've done and proud of who you are.",
+                  style: TextStyle(
+                    fontFamily: 'Poppins',
+                    fontSize: 20,
+                    color: Colors.white,
+                  ),
+                ),
+                SizedBox(height: 20), // Add spacing below 'Thought of the Day'
+                GridView.count(
+                  shrinkWrap: true,
+                  physics: NeverScrollableScrollPhysics(), // Disable GridView scrolling
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 20,
+                  mainAxisSpacing: 20,
                   children: [
-                    RichText(
-                      text: TextSpan(
-                        children: [
-                          TextSpan(
-                            text: 'City ',
-                            style: TextStyle(
-                              fontFamily: 'Montserrat',
-                              fontWeight: FontWeight.normal, // Normal weight for "City"
-                              fontSize: 40, // Adjust the font size as needed
-                              color: Colors.white, // Ensure the color is set for visibility
-                            ),
-                          ),
-                          TextSpan(
-                            text: 'Church',
-                            style: TextStyle(
-                              fontFamily: 'Montserrat',
-                              fontWeight: FontWeight.bold, // Bold weight for "Church"
-                              fontSize: 40, // Adjust the font size as needed
-                              color: Colors.white, // Ensure the color is set for visibility
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Spacer(), // Spacer to push the icon to the right
-                    IconButton(
-                      icon: Icon(
-                        Icons.person,
-                        color: Color.fromARGB(255, 255, 230, 0), // Set the icon color
-                      ),
-                      onPressed: () {
-                        // Add your onPressed functionality here
-                      },
-                    ),
+                    _buildCard(Icons.event, 'Events', 'List of events'),
+                    _buildCard(Icons.article, 'Blogs', 'Read churches blogs'),
+                    _buildCard(Icons.chrome_reader_mode, 'Prayers', 'Read Prayers'),
+                    _buildCard(Icons.book, 'Books', 'List of church books'),
+                    _buildCard(Icons.image, 'Gallery', 'Videos and books'),
+                    _buildCard(Icons.search, 'Find Church', 'Find nearby churches'),
+                    _buildCard(Icons.business, 'About', 'Read about church'),
+                    _buildCard(Icons.contact_mail, 'Contact', 'Message to church'),
                   ],
                 ),
-                backgroundColor: Colors.transparent, // Make AppBar transparent
-                elevation: 0, // Remove AppBar shadow
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildCard(IconData iconData, String title, String description) {
+    return Card(
+      elevation: 5,
+      color: Color.fromARGB(64, 0, 0, 0),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(15.0),
+      ),
+      child: InkWell(
+        onTap: () {
+          // Navigate or handle onTap event
+        },
+        child: Container(
+          decoration: BoxDecoration(
+            color: Colors.transparent, // Set container background color to transparent
+            borderRadius: BorderRadius.circular(15.0),
+          ),
+          padding: EdgeInsets.all(20.0),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Icon(
+                iconData,
+                size: 24,
+                color: Color.fromARGB(255, 255, 230, 0), // Icon color
               ),
+              SizedBox(width: 10),
               Expanded(
-                child: Center(
-                  child: Text(
-                    'Hello World',
-                    style: TextStyle(
-                      color: Colors.white, // Ensure the color is set for visibility
-                      fontSize: 24,
-                    ),
+                child: Container(
+                  color: Colors.transparent, // Set column background color to transparent
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SelectableText( // Make title selectable
+                        title,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontFamily: 'Poppins',
+                          fontSize: 12,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
+                      SizedBox(height: 5),
+                      Text(
+                        description,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontFamily: 'Poppins',
+                          fontSize: 8,
+                          color: Colors.grey,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),
