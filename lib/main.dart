@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:app/views/screens/dashboard/home_page.dart';
+
 
 const firebaseConfig = FirebaseOptions(
   apiKey: "AIzaSyAgqhQOlqRslHrEYWGfCS65X-q8V2rNnhs",
@@ -27,19 +29,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
-        
       ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Hello World App'),
-        ),
-        body: Center(
-          child: Text(
-            'Hello World',
-            style: TextStyle(fontSize: 24),
-          ),
-        ),
-      ),
+      initialRoute: HomePage.routeName,
+      routes: {
+        HomePage.routeName: (context) => HomePage(),
+      },
     );
   }
 }
