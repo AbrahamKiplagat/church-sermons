@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:app/views/screens/sidebar/animated_sidebar.dart'; // Import AnimatedSidebar class
-// import 'package:app/views/widgets/drawer_navigation.dart'; // Import DrawerNavigation class
+import 'package:app/views/screens/events/events_page.dart'; // Import EventsPage
 
 class HomePage extends StatelessWidget {
   static const routeName = '/home';
@@ -48,6 +48,7 @@ class HomePage extends StatelessWidget {
             ),
           ],
         ),
+        iconTheme: IconThemeData(color: Color.fromARGB(255, 255, 230, 0)),
         backgroundColor: Colors.transparent, // Make AppBar transparent
         elevation: 0, // Remove AppBar shadow
       ),
@@ -94,14 +95,14 @@ class HomePage extends StatelessWidget {
                   crossAxisSpacing: 20,
                   mainAxisSpacing: 20,
                   children: [
-                    _buildCard(Icons.event, 'Events', 'List of events'),
-                    _buildCard(Icons.article, 'Blogs', 'Read churches blogs'),
-                    _buildCard(Icons.chrome_reader_mode, 'Prayers', 'Read Prayers'),
-                    _buildCard(Icons.book, 'Books', 'List of church books'),
-                    _buildCard(Icons.image, 'Gallery', 'Videos and books'),
-                    _buildCard(Icons.search, 'Find Church', 'Find nearby churches'),
-                    _buildCard(Icons.business, 'About', 'Read about church'),
-                    _buildCard(Icons.contact_mail, 'Contact', 'Message to church'),
+                    _buildCard(context, Icons.event, 'Events', 'List of events', EventsPage.routeName),
+                    _buildCard(context, Icons.article, 'Blogs', 'Read churches blogs', '/blogs'),
+                    _buildCard(context, Icons.chrome_reader_mode, 'Prayers', 'Read Prayers', '/prayers'),
+                    _buildCard(context, Icons.book, 'Books', 'List of church books', '/books'),
+                    _buildCard(context, Icons.image, 'Gallery', 'Videos and books', '/gallery'),
+                    _buildCard(context, Icons.search, 'Find Church', 'Find nearby churches', '/find-church'),
+                    _buildCard(context, Icons.business, 'About', 'Read about church', '/about'),
+                    _buildCard(context, Icons.contact_mail, 'Contact', 'Message to church', '/contact'),
                   ],
                 ),
               ],
@@ -112,7 +113,7 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Widget _buildCard(IconData iconData, String title, String description) {
+  Widget _buildCard(BuildContext context, IconData iconData, String title, String description, String routeName) {
     return Card(
       elevation: 5,
       color: Color.fromARGB(64, 0, 0, 0),
@@ -121,7 +122,7 @@ class HomePage extends StatelessWidget {
       ),
       child: InkWell(
         onTap: () {
-          // Navigate or handle onTap event
+          Navigator.of(context).pushNamed(routeName);
         },
         child: Container(
           decoration: BoxDecoration(

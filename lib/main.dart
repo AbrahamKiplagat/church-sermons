@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:app/views/screens/dashboard/home_page.dart';
-
+import 'package:app/views/screens/events/events_page.dart'; // Import the EventsPage
+import 'package:app/views/screens/sidebar/animated_sidebar.dart'; // Import the DrawerNavigation class
 
 const firebaseConfig = FirebaseOptions(
   apiKey: "AIzaSyAgqhQOlqRslHrEYWGfCS65X-q8V2rNnhs",
@@ -33,6 +34,7 @@ class MyApp extends StatelessWidget {
       initialRoute: HomePage.routeName,
       routes: {
         HomePage.routeName: (context) => HomePage(),
+        EventsPage.routeName: (context) => EventsPage(),
       },
     );
   }

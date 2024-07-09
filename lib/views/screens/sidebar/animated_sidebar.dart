@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:app/views/screens/events/events_page.dart'; // Import EventsPage
 
 class DrawerNavigation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
       child: Container(
-        color: Color.fromARGB(255, 39, 39, 39), // Background color of the drawer
+        color: Color.fromARGB(255, 39, 39, 39),
         child: ListView(
           padding: EdgeInsets.zero,
           children: [
             DrawerHeader(
               decoration: BoxDecoration(
-                color: Color.fromARGB(255, 39, 39, 39), // Background color of the drawer header
+                color: Color.fromARGB(255, 39, 39, 39),
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -31,7 +32,7 @@ class DrawerNavigation extends StatelessWidget {
                       IconButton(
                         icon: Icon(Icons.cancel, color: Colors.white),
                         onPressed: () {
-                          Navigator.of(context).pop(); // Close the drawer
+                          Navigator.of(context).pop();
                         },
                       ),
                     ],
@@ -41,7 +42,7 @@ class DrawerNavigation extends StatelessWidget {
               ),
             ),
             ListTile(
-              leading: Icon(Icons.event, color: Colors.white), // Icon color
+              leading: Icon(Icons.event, color: Colors.white),
               title: Text(
                 'Events',
                 style: TextStyle(
@@ -49,8 +50,7 @@ class DrawerNavigation extends StatelessWidget {
                 ),
               ),
               onTap: () {
-                // Navigate to Events page or handle onTap event
-                Navigator.of(context).pop(); // Close the drawer
+                Navigator.of(context).pushNamed(EventsPage.routeName);
               },
             ),
             ListTile(
@@ -144,6 +144,7 @@ class DrawerNavigation extends StatelessWidget {
                 Navigator.of(context).pop(); // Close the drawer
               },
             ),
+            // Add other list tiles as needed
           ],
         ),
       ),
