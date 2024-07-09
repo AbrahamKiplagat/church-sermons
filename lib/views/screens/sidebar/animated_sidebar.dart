@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:app/views/screens/events/events_page.dart'; // Import EventsPage
+import 'package:app/views/screens/blogs/blogs_page.dart'; // Import EventsPage
 
 class DrawerNavigation extends StatelessWidget {
   @override
@@ -63,7 +64,7 @@ class DrawerNavigation extends StatelessWidget {
               ),
               onTap: () {
                 // Navigate to Blogs page or handle onTap event
-                Navigator.of(context).pop(); // Close the drawer
+                 Navigator.of(context).pushNamed(BlogsPage.routeName);
               },
             ),
             ListTile(

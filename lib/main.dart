@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:app/views/screens/dashboard/home_page.dart';
+import 'package:app/views/screens/blogs/blogs_page.dart'; // Import the EventsPage
 import 'package:app/views/screens/events/events_page.dart'; // Import the EventsPage
 import 'package:app/views/screens/sidebar/animated_sidebar.dart'; // Import the DrawerNavigation class
 
@@ -35,6 +36,7 @@ class MyApp extends StatelessWidget {
       routes: {
         HomePage.routeName: (context) => HomePage(),
         EventsPage.routeName: (context) => EventsPage(),
+        BlogsPage.routeName: (context) => BlogsPage(),
       },
     );
   }
