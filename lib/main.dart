@@ -1,3 +1,4 @@
+import 'package:app/views/screens/prayers/prayers_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:app/views/screens/dashboard/home_page.dart';
@@ -37,6 +38,7 @@ class MyApp extends StatelessWidget {
         HomePage.routeName: (context) => HomePage(),
         EventsPage.routeName: (context) => EventsPage(),
         BlogsPage.routeName: (context) => BlogsPage(),
+        PrayersPage.routeName: (context) => PrayersPage(),
       },
     );
   }

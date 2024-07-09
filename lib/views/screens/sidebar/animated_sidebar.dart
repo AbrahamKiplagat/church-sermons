@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:app/views/screens/prayers/prayers_screen.dart';
 import 'package:app/views/screens/events/events_page.dart'; // Import EventsPage
 import 'package:app/views/screens/blogs/blogs_page.dart'; // Import EventsPage
 
@@ -77,7 +78,7 @@ class DrawerNavigation extends StatelessWidget {
               ),
               onTap: () {
                 // Navigate to Prayers page or handle onTap event
-                Navigator.of(context).pop(); // Close the drawer
+                 Navigator.of(context).pushNamed(PrayersPage.routeName);
               },
             ),
             ListTile(

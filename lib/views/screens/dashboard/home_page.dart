@@ -1,3 +1,4 @@
+import 'package:app/views/screens/prayers/prayers_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:app/views/screens/sidebar/animated_sidebar.dart'; // Import AnimatedSidebar class
 import 'package:app/views/screens/events/events_page.dart'; // Import EventsPage
@@ -98,7 +99,7 @@ class HomePage extends StatelessWidget {
                   children: [
                     _buildCard(context, Icons.event, 'Events', 'List of events', EventsPage.routeName),
                     _buildCard(context, Icons.article, 'Blogs', 'Read churches blogs', BlogsPage.routeName),
-                    _buildCard(context, Icons.chrome_reader_mode, 'Prayers', 'Read Prayers', '/prayers'),
+                    _buildCard(context, Icons.chrome_reader_mode, 'Prayers', 'Read Prayers', PrayersPage.routeName),
                     _buildCard(context, Icons.book, 'Books', 'List of church books', '/books'),
                     _buildCard(context, Icons.image, 'Gallery', 'Videos and books', '/gallery'),
                     _buildCard(context, Icons.search, 'Find Church', 'Find nearby churches', '/find-church'),
