@@ -13,7 +13,6 @@
 #include <firebase_storage/firebase_storage_plugin_c_api.h>
 #include <rive_common/rive_plugin.h>
 #include <url_launcher_windows/url_launcher_windows.h>
-#include <webview_universal/webview_universal_plugin.h>
 
 void RegisterPlugins(flutter::PluginRegistry* registry) {
   CloudFirestorePluginCApiRegisterWithRegistrar(
@@ -30,6 +29,4 @@ void RegisterPlugins(flutter::PluginRegistry* registry) {
       registry->GetRegistrarForPlugin("RivePlugin"));
   UrlLauncherWindowsRegisterWithRegistrar(
       registry->GetRegistrarForPlugin("UrlLauncherWindows"));
-  WebviewUniversalPluginRegisterWithRegistrar(
-      registry->GetRegistrarForPlugin("WebviewUniversalPlugin"));
 }

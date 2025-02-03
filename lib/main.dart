@@ -4,6 +4,8 @@ import 'package:app/views/screens/dashboard/home_page.dart';
 import 'package:app/views/screens/blogs/blogs_page.dart'; // Import the EventsPage
 import 'package:app/views/screens/events/events_page.dart'; // Import the EventsPage
 import 'package:app/views/screens/sidebar/animated_sidebar.dart'; // Import the DrawerNavigation class
+import 'package:app/views/screens/books/books_page.dart'; // Import the DrawerNavigation clas\\
+//make a responsive screen 
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -26,6 +28,7 @@ class MyApp extends StatelessWidget {
         EventsPage.routeName: (context) => EventsPage(),
         BlogsPage.routeName: (context) => BlogsPage(),
         PrayersPage.routeName: (context) => PrayersPage(),
+        BooksPage.routeName: (context) => BooksPage(),
       },
     );
   }
