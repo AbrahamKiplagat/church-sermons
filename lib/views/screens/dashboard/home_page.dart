@@ -5,7 +5,7 @@ import 'package:app/views/screens/events/events_page.dart'; // Import EventsPage
 import 'package:app/views/screens/blogs/blogs_page.dart'; // Import EventsPage
 
 class HomePage extends StatelessWidget {
-  static const routeName = '/home';
+  static const routeName = '/';
 
   @override
   Widget build(BuildContext context) {
