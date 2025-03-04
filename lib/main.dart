@@ -5,8 +5,13 @@ import 'package:app/views/screens/blogs/blogs_page.dart'; // Import the EventsPa
 import 'package:app/views/screens/events/events_page.dart'; // Import the EventsPage
 import 'package:app/views/screens/sidebar/animated_sidebar.dart'; // Import the DrawerNavigation class
 import 'package:app/views/screens/books/books_page.dart'; // Import the DrawerNavigation clas\\
+import 'package:app/views/screens/gallery/gallery_page.dart'; // Import the DrawerNavigation clas\\
 //1. make a responsive screen 
-// 2. 
+// 2. make a livestream screen for user to view live and the speaker to create a livestream as an admin.
+// a) find the packages to install.
+// b) create a draft of how the two screens will look like.
+// 3) create a new screen for log in and sign up for the speaker admin and user admin.
+
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(MyApp());
@@ -29,6 +34,7 @@ class MyApp extends StatelessWidget {
         BlogsPage.routeName: (context) => BlogsPage(),
         PrayersPage.routeName: (context) => PrayersPage(),
         BooksPage.routeName: (context) => BooksPage(),
+        GalleryPage.routeName: (context) => GalleryPage(),
       },
     );
   }
