@@ -5,8 +5,8 @@ import 'package:app/views/screens/blogs/blogs_page.dart'; // Import the EventsPa
 import 'package:app/views/screens/events/events_page.dart'; // Import the EventsPage
 import 'package:app/views/screens/sidebar/animated_sidebar.dart'; // Import the DrawerNavigation class
 import 'package:app/views/screens/books/books_page.dart'; // Import the DrawerNavigation clas\\
-//make a responsive screen 
-
+//1. make a responsive screen 
+// 2. 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(MyApp());
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Hello World App',
+      title: 'Church Sermons App',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,

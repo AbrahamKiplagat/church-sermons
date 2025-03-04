@@ -42,7 +42,7 @@ class BooksPage extends StatelessWidget {
           padding: EdgeInsets.only(top: 100, left: 10, right: 10), // Adjust top padding for space below app bar
           child: GridView.builder(
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2, // Adjust this number to change the number of columns
+              crossAxisCount: 3, // Adjust this number to change the number of columns
               crossAxisSpacing: 10, // Spacing between columns
               mainAxisSpacing: 10, // Spacing between rows
             ),
