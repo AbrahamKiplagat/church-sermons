@@ -22,7 +22,7 @@ class HomePage extends StatelessWidget {
                     style: TextStyle(
                       fontFamily: 'FjallaOne',
                       fontWeight: FontWeight.normal, // Normal weight for "City"
-                      fontSize: 40, // Adjust the font size as needed
+                      fontSize: _getResponsiveFontSize(context, 40), // Responsive font size
                       color: Colors.white, // Ensure the color is set for visibility
                     ),
                   ),
@@ -31,7 +31,7 @@ class HomePage extends StatelessWidget {
                     style: TextStyle(
                       fontFamily: 'FjallaOne',
                       fontWeight: FontWeight.bold, // Bold weight for "Church"
-                      fontSize: 40, // Adjust the font size as needed
+                      fontSize: _getResponsiveFontSize(context, 40), // Responsive font size
                       color: Colors.white, // Ensure the color is set for visibility
                     ),
                   ),
@@ -43,6 +43,7 @@ class HomePage extends StatelessWidget {
               icon: Icon(
                 Icons.person,
                 color: Color.fromARGB(255, 255, 230, 0), // Set the icon color
+                size: _getResponsiveIconSize(context, 24), // Responsive icon size
               ),
               onPressed: () {
                 // Add your onPressed functionality here
@@ -50,7 +51,10 @@ class HomePage extends StatelessWidget {
             ),
           ],
         ),
-        iconTheme: IconThemeData(color: Color.fromARGB(255, 255, 230, 0)),
+        iconTheme: IconThemeData(
+          color: Color.fromARGB(255, 255, 230, 0),
+          size: _getResponsiveIconSize(context, 24), // Responsive icon size
+        ),
         backgroundColor: Colors.transparent, // Make AppBar transparent
         elevation: 0, // Remove AppBar shadow
       ),
@@ -64,38 +68,42 @@ class HomePage extends StatelessWidget {
             ),
           ),
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
+            padding: EdgeInsets.symmetric(
+              horizontal: _getResponsivePadding(context, 20), // Responsive horizontal padding
+            ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(height: 100), // Add padding above 'Thought of the Day'
+                SizedBox(height: _getResponsivePadding(context, 100)), // Responsive spacing
                 Padding(
-                  padding: const EdgeInsets.only(bottom: 20), // Add spacing below 'Thought of the Day'
-                  child: SelectableText( // Make 'Thought of the Day' selectable
+                  padding: EdgeInsets.only(
+                    bottom: _getResponsivePadding(context, 20), // Responsive spacing
+                  ),
+                  child: SelectableText(
                     'Thought of the Day',
                     style: TextStyle(
                       fontFamily: 'Poppins',
                       fontWeight: FontWeight.bold,
-                      fontSize: 24,
+                      fontSize: _getResponsiveFontSize(context, 24), // Responsive font size
                       color: Color.fromARGB(255, 255, 230, 0),
                     ),
                   ),
                 ),
-                SelectableText( // Make the thought content selectable
+                SelectableText(
                   "At the end of the day, before close your eyes, be content with what you've done and proud of who you are.",
                   style: TextStyle(
                     fontFamily: 'Poppins',
-                    fontSize: 20,
+                    fontSize: _getResponsiveFontSize(context, 20), // Responsive font size
                     color: Colors.white,
                   ),
                 ),
-                SizedBox(height: 20), // Add spacing below 'Thought of the Day'
+                SizedBox(height: _getResponsivePadding(context, 20)), // Responsive spacing
                 GridView.count(
                   shrinkWrap: true,
                   physics: NeverScrollableScrollPhysics(), // Disable GridView scrolling
-                  crossAxisCount: 2,
-                  crossAxisSpacing: 20,
-                  mainAxisSpacing: 20,
+                  crossAxisCount: _getResponsiveCrossAxisCount(context), // Responsive grid columns
+                  crossAxisSpacing: _getResponsivePadding(context, 20), // Responsive spacing
+                  mainAxisSpacing: _getResponsivePadding(context, 20), // Responsive spacing
                   children: [
                     _buildCard(context, Icons.event, 'Events', 'List of events', EventsPage.routeName),
                     _buildCard(context, Icons.article, 'Blogs', 'Read churches blogs', BlogsPage.routeName),
@@ -115,6 +123,7 @@ class HomePage extends StatelessWidget {
     );
   }
 
+  // Helper method to build a card
   Widget _buildCard(BuildContext context, IconData iconData, String title, String description, String routeName) {
     return Card(
       elevation: 5,
@@ -131,44 +140,41 @@ class HomePage extends StatelessWidget {
             color: Colors.transparent, // Set container background color to transparent
             borderRadius: BorderRadius.circular(15.0),
           ),
-          padding: EdgeInsets.all(20.0),
+          padding: EdgeInsets.all(_getResponsivePadding(context, 20)), // Responsive padding
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Icon(
                 iconData,
-                size: 24,
+                size: _getResponsiveIconSize(context, 24), // Responsive icon size
                 color: Color.fromARGB(255, 255, 230, 0), // Icon color
               ),
-              SizedBox(width: 10),
+              SizedBox(width: _getResponsivePadding(context, 10)), // Responsive spacing
               Expanded(
-                child: Container(
-                  color: Colors.transparent, // Set column background color to transparent
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      SelectableText( // Make title selectable
-                        title,
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontFamily: 'Poppins',
-                          fontSize: 12,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                        ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    SelectableText(
+                      title,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontFamily: 'Poppins',
+                        fontSize: _getResponsiveFontSize(context, 12), // Responsive font size
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
                       ),
-                      SizedBox(height: 5),
-                      Text(
-                        description,
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontFamily: 'Poppins',
-                          fontSize: 8,
-                          color: Colors.grey,
-                        ),
+                    ),
+                    SizedBox(height: _getResponsivePadding(context, 5)), // Responsive spacing
+                    Text(
+                      description,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontFamily: 'Poppins',
+                        fontSize: _getResponsiveFontSize(context, 8), // Responsive font size
+                        color: Colors.grey,
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
             ],
@@ -176,5 +182,61 @@ class HomePage extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  // Helper method to get responsive font size
+  double _getResponsiveFontSize(BuildContext context, double baseSize) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    if (screenWidth > 1200) {
+      return baseSize * 1.5; // Larger font size for large screens
+    } else if (screenWidth > 800) {
+      return baseSize * 1.2; // Medium font size for tablets
+    } else if (screenWidth > 600) {
+      return baseSize; // Default font size for small tablets
+    } else {
+      return baseSize * 0.8; // Smaller font size for mobile phones
+    }
+  }
+
+  // Helper method to get responsive icon size
+  double _getResponsiveIconSize(BuildContext context, double baseSize) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    if (screenWidth > 1200) {
+      return baseSize * 1.5; // Larger icon size for large screens
+    } else if (screenWidth > 800) {
+      return baseSize * 1.2; // Medium icon size for tablets
+    } else if (screenWidth > 600) {
+      return baseSize; // Default icon size for small tablets
+    } else {
+      return baseSize * 0.8; // Smaller icon size for mobile phones
+    }
+  }
+
+  // Helper method to get responsive padding
+  double _getResponsivePadding(BuildContext context, double basePadding) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    if (screenWidth > 1200) {
+      return basePadding * 1.5; // Larger padding for large screens
+    } else if (screenWidth > 800) {
+      return basePadding * 1.2; // Medium padding for tablets
+    } else if (screenWidth > 600) {
+      return basePadding; // Default padding for small tablets
+    } else {
+      return basePadding * 0.8; // Smaller padding for mobile phones
+    }
+  }
+
+  // Helper method to get responsive grid columns
+  int _getResponsiveCrossAxisCount(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    if (screenWidth > 1200) {
+      return 4; // 4 columns for large screens
+    } else if (screenWidth > 800) {
+      return 3; // 3 columns for tablets
+    } else if (screenWidth > 600) {
+      return 2; // 2 columns for small tablets
+    } else {
+      return 2; // 2 columns for mobile phones
+    }
   }
 }
