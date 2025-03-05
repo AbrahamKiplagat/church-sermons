@@ -1,3 +1,4 @@
+import 'package:app/views/screens/contactchurch/contact_church.dart';
 import 'package:app/views/screens/prayers/prayers_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:app/views/screens/dashboard/home_page.dart';
@@ -37,6 +38,7 @@ class MyApp extends StatelessWidget {
         BooksPage.routeName: (context) => BooksPage(),
         GalleryPage.routeName: (context) => GalleryPage(),
         AboutChurchScreen.routeName: (context) =>AboutChurchScreen(),
+        ContactChurchScreen.routeName: (context) => ContactChurchScreen()
             
       },
     );

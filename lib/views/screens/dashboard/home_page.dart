@@ -112,7 +112,7 @@ class HomePage extends StatelessWidget {
                     _buildCard(context, Icons.image, 'Gallery', 'Videos and books', '/gallery'),
                     _buildCard(context, Icons.search, 'Find Church', 'Find nearby churches', '/find-church'),
                     _buildCard(context, Icons.business, 'About', 'Read about church', '/about-church'),
-                    _buildCard(context, Icons.contact_mail, 'Contact', 'Message to church', '/contact'),
+                    _buildCard(context, Icons.contact_mail, 'Contact', 'Message to church', '/contact-church'),
                   ],
                 ),
               ],
