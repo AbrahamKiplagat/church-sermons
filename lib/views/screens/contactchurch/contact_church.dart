@@ -28,7 +28,7 @@ class ContactChurchScreen extends StatelessWidget {
               text: TextSpan(
                 children: [
                   TextSpan(
-                    text: 'City ',
+                    text: 'Contact ',
                     style: TextStyle(
                       fontFamily: 'FjallaOne',
                       fontWeight: FontWeight.normal,
@@ -194,6 +194,8 @@ class ContactChurchScreen extends StatelessWidget {
                 fontSize: 16,
                 color: Colors.white,
               ),
+              maxLines: 3, // Allow description to wrap to 3 lines
+              overflow: TextOverflow.ellipsis, // Add ellipsis if text overflows
             ),
             SizedBox(height: 10),
             if (children != null) ...children,
@@ -208,6 +210,7 @@ class ContactChurchScreen extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(vertical: 8.0),
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start, // Align items to the top
         children: [
           Icon(
             icon,
@@ -215,11 +218,16 @@ class ContactChurchScreen extends StatelessWidget {
             size: 24,
           ),
           SizedBox(width: 10),
-          Text(
-            text,
-            style: TextStyle(
-              fontSize: 16,
-              color: Colors.white,
+          Expanded(
+            // Use Expanded to allow text to wrap
+            child: Text(
+              text,
+              style: TextStyle(
+                fontSize: 16,
+                color: Colors.white,
+              ),
+              maxLines: 2, // Allow text to wrap to 2 lines
+              overflow: TextOverflow.ellipsis, // Add ellipsis if text overflows
             ),
           ),
         ],
@@ -237,7 +245,7 @@ class ContactChurchScreen extends StatelessWidget {
     } else if (screenWidth > 600) {
       return baseSize;
     } else {
-      return baseSize * 0.8;
+      return baseSize * 0.8; // Reduce font size further for small screens
     }
   }
 
@@ -251,7 +259,7 @@ class ContactChurchScreen extends StatelessWidget {
     } else if (screenWidth > 600) {
       return baseSize;
     } else {
-      return baseSize * 0.8;
+      return baseSize * 0.8; // Reduce icon size further for small screens
     }
   }
 
@@ -265,7 +273,7 @@ class ContactChurchScreen extends StatelessWidget {
     } else if (screenWidth > 600) {
       return basePadding;
     } else {
-      return basePadding * 0.8;
+      return basePadding * 0.6; // Reduce padding further for small screens
     }
   }
 }
