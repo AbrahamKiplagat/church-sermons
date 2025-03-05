@@ -6,6 +6,7 @@ import 'package:app/views/screens/events/events_page.dart'; // Import the Events
 import 'package:app/views/screens/sidebar/animated_sidebar.dart'; // Import the DrawerNavigation class
 import 'package:app/views/screens/books/books_page.dart'; // Import the DrawerNavigation clas\\
 import 'package:app/views/screens/gallery/gallery_page.dart'; // Import the DrawerNavigation clas\\
+import 'package:app/views/screens/aboutchurch/about_church.dart';
 //1. make a responsive screen 
 // 2. make a livestream screen for user to view live and the speaker to create a livestream as an admin.
 // a) find the packages to install.
@@ -35,6 +36,8 @@ class MyApp extends StatelessWidget {
         PrayersPage.routeName: (context) => PrayersPage(),
         BooksPage.routeName: (context) => BooksPage(),
         GalleryPage.routeName: (context) => GalleryPage(),
+        AboutChurchScreen.routeName: (context) =>AboutChurchScreen(),
+            
       },
     );
   }

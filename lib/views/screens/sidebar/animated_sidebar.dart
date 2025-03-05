@@ -1,3 +1,4 @@
+import 'package:app/views/screens/aboutchurch/about_church.dart';
 import 'package:flutter/material.dart';
 import 'package:app/views/screens/prayers/prayers_screen.dart';
 import 'package:app/views/screens/events/events_page.dart'; // Import EventsPage
@@ -47,18 +48,16 @@ class DrawerNavigation extends StatelessWidget {
             _buildListTile(
               context,
               icon: Icons.search,
-              title: 'Find Church',
-              onTap: () {
+              title: 'Find Church',              onTap: () {
                 Navigator.of(context).pop(); // Close the drawer
               },
             ),
             _buildListTile(
               context,
               icon: Icons.business,
-              title: 'About',
-              onTap: () {
-                Navigator.of(context).pop(); // Close the drawer
-              },
+              title: 'About Chuch',
+              
+              routeName: AboutChurchScreen.routeName,
             ),
             _buildListTile(
               context,
