@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:app/views/screens/sidebar/animated_sidebar.dart'; // Import AnimatedSidebar class
 import 'package:app/views/screens/events/events_page.dart'; // Import EventsPage
 import 'package:app/views/screens/blogs/blogs_page.dart'; // Import EventsPage
-import 'package:app/views/screens/gallery/gallery_page.dart'; 
+
 class HomePage extends StatelessWidget {
   static const routeName = '/';
 

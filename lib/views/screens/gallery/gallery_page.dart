@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:app/views/screens/sidebar/animated_sidebar.dart'; // Import AnimatedSidebar// Import DrawerNavigation
 
 class GalleryPage extends StatelessWidget {
   static const routeName = '/gallery';
@@ -21,7 +22,20 @@ class GalleryPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true, // Extend the body behind the AppBar
+      drawer: DrawerNavigation(), // Use the DrawerNavigation widget
       appBar: AppBar(
+        leading: Builder(
+          builder: (context) => IconButton(
+            icon: Icon(
+              Icons.menu, // Menu icon
+              color: Color.fromARGB(255, 255, 230, 0),
+              size: _getResponsiveIconSize(context, 24),
+            ),
+            onPressed: () {
+              Scaffold.of(context).openDrawer(); // Open the drawer
+            },
+          ),
+        ),
         title: Row(
           children: [
             RichText(
