@@ -3,7 +3,7 @@ import 'package:app/views/screens/prayers/prayers_screen.dart';
 import 'package:app/views/screens/events/events_page.dart'; // Import EventsPage
 import 'package:app/views/screens/blogs/blogs_page.dart'; // Import BlogsPage
 import 'package:app/views/screens/books/books_page.dart'; // Import BooksPage
-
+import 'package:app/views/screens/gallery/gallery_page.dart'; 
 class DrawerNavigation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -42,9 +42,7 @@ class DrawerNavigation extends StatelessWidget {
               context,
               icon: Icons.image,
               title: 'Gallery',
-              onTap: () {
-                Navigator.of(context).pop(); // Close the drawer
-              },
+              routeName: GalleryPage.routeName,
             ),
             _buildListTile(
               context,
