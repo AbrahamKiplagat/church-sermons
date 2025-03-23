@@ -1,4 +1,4 @@
-name: Church Sermons
+name: app
 description: "A new church app."
 
 publish_to: "none" # Remove this line if you wish to publish to pub.dev
@@ -17,7 +17,7 @@ dependencies:
   provider: ^6.1.2
   cupertino_icons: ^1.0.2
   line_awesome_flutter: ^2.0.0
-  flutter_native_splash: ^2.4.0
+  flutter_native_splash: ^2.4.0 
   cloud_firestore: ^4.17.0
   firebase_pagination: ^3.1.0
   awesome_dialog: ^3.2.0
